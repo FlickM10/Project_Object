@@ -30,3 +30,31 @@ class BankAccount:
     def transfer(self, amount, to_account):
         self.withdraw(amount)
         to_account.deposit(amount)
+```
+### Usage Example
+
+```
+han = BankAccount("Han", 1000)
+print(han.balance)      # 1000.0
+
+han.deposit(500)
+print(han.balance)      # 1500.0
+
+lee = BankAccount("Lee")
+han.transfer(300, lee)
+
+print(han.balance)      # 1200.0
+print(lee.balance)      # 300.0
+```
+
+## Design Highlights
+
+Encapsulation of balance and owner data.
+
+Input validation for deposits and withdrawals.
+
+Reusable transfer logic built on existing methods.
+
+Zero external dependencies.
+
+Ideal for teaching OOP fundamentals, encapsulation, and method composition.
